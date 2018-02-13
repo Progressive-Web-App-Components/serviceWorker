@@ -1,8 +1,23 @@
-var version = '7';
+var version = '8';
+
 // for github
-var path = "serviceWorkerSpike/";
-// for local
-// var path = "./";
+var CacheArray = [
+  'https://jagatjeevan.github.io/serviceWorkerSpike/offline.html',
+  'https://jagatjeevan.github.io/serviceWorkerSpike/offline.css',
+  'https://jagatjeevan.github.io/serviceWorkerSpike/offline.js',
+  'https://jagatjeevan.github.io/serviceWorkerSpike/style.css',
+];
+var offlineHtml = 'https://jagatjeevan.github.io/serviceWorkerSpike/offline.html';
+
+// // for local
+// var CacheArray = [
+//   './offline.html',
+//   './offline.css',
+//   './offline.js',
+//   './style.css',
+// ];
+// var offlineHtml = './offline.html';
+
 
 self.addEventListener('install', function(event) {
   console.log('SW installed ', version , ' -> ', new Date().toLocaleString());
@@ -10,12 +25,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(version)
     .then(function(cache) {
-      return cache.addAll([
-        path + 'offline.html',
-        path + 'offline.css',
-        path + 'offline.js',
-        path + 'style.css'
-      ]);
+      return cache.addAll(CacheArray);
     }));
 });
 
@@ -41,7 +51,7 @@ self.addEventListener('fetch', function(event) {
       }
 
       if(!navigator.onLine) {
-        return caches.match(new Request(path + 'offline.html'));
+        return caches.match(new Request(offlineHtml));
       }
       // The below line is buggy. The fetch header needs to be cleared after a request is done.
       return fetch(event.request);
