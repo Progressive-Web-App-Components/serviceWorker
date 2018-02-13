@@ -1,4 +1,4 @@
-var version = '5';
+var version = '7';
 // for github
 var path = "serviceWorkerSpike/";
 // for local
@@ -35,9 +35,9 @@ self.addEventListener('activate', function(event) {
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
-    .then(function(response) {
-      if(response) {
-        return response;
+    .then(function(res) {
+      if(res) {
+        return res;
       }
 
       if(!navigator.onLine) {
