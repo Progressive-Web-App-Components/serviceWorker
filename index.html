@@ -17,7 +17,6 @@
   <p>Whenever the browser calls service worker, there is an external parameter called "Serice-Worker-Allowed" and the path which specifies the allowed directory. This is the </p>
 
   <script>
-    var path = (window.location.href.match('github')) ? 'serviceWorkerSpike/' : '/';
     if ('serviceWorker' in navigator) {
       console.log("service worker supported");
       // Registering Service Worker

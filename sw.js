@@ -1,4 +1,8 @@
 var version = '5';
+// for github
+var path = "serviceWorkerSpike/";
+// for local
+// var path = "./";
 
 self.addEventListener('install', function(event) {
   console.log('SW installed ', version , ' -> ', new Date().toLocaleString());
@@ -7,10 +11,10 @@ self.addEventListener('install', function(event) {
     caches.open(version)
     .then(function(cache) {
       return cache.addAll([
-        './offline.html',
-        './offline.css',
-        './offline.js',
-        './style.css'
+        path + 'offline.html',
+        path + 'offline.css',
+        path + 'offline.js',
+        path + 'style.css'
       ]);
     }));
 });
@@ -37,7 +41,7 @@ self.addEventListener('fetch', function(event) {
       }
 
       if(!navigator.onLine) {
-        return caches.match(new Request('./offline.html'));
+        return caches.match(new Request(path + 'offline.html'));
       }
       // The below line is buggy. The fetch header needs to be cleared after a request is done.
       return fetch(event.request);
