@@ -1,4 +1,4 @@
-var version = '3';
+var version = '4';
 
 var CacheArray = [
   'https://jagatjeevan.github.io/serviceWorkerSpike/offline.html',
@@ -31,7 +31,6 @@ self.addEventListener('activate', function(event) {
     }));
 });
 
-// Cache first
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
