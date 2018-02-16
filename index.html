@@ -6,15 +6,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h4>Scope of the service worker</h4>
-  <p>The scope of the service worker is where the file is located. You can pass an additional parameter as scope.</p>
-
-  <code>
-    navigator.serviceWorker.register('./sw.js', { scope: '/brand' });
-  </code>
-
-  <p>Here the service worker can also access the "brand" directory.</p>
-  <p>Whenever the browser calls service worker, there is an external parameter called "Serice-Worker-Allowed" and the path which specifies the allowed directory. This is the </p>
+  <ul>
+    <li>Go to the Developers Tool on Chrome</li>
+    <li>Click on Network tab and click offline and then refresh the page.</li>
+    <li>Click on offline checkbox</li>
+    <li>Now refresh the page</li>
+  </ul>
+  <ul>
+    <li>Go to the Developers Tool on Chrome</li>
+    <li>Get to the Application tab</li>
+    <li>In Cache section, you can see the files which are cached.</li>
+    <li>There could be multiple versions in some cases</li>
+    <li>These are named caches.</li>
+  </ul>
 
   <script>
     let serviceWorkerPath = window.location.href.match('github') ? 'https://jagatjeevan.github.io/serviceWorkerSpike/sw.js' : './sw.js';

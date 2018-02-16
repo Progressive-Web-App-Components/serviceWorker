@@ -1,4 +1,4 @@
-var version = '8';
+var version = '2';
 
 // for github
 var CacheArray = [
@@ -54,6 +54,7 @@ self.addEventListener('fetch', function(event) {
         return caches.match(new Request(offlineHtml));
       }
       // The below line is buggy. The fetch header needs to be cleared after a request is done.
+      //
       return fetch(event.request);
     }));
 });
