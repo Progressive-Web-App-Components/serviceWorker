@@ -2,12 +2,12 @@ var version = '2';
 
 // for github
 var CacheArray = [
-  'https://jagatjeevan.github.io/serviceWorkerSpike/offline.html',
-  'https://jagatjeevan.github.io/serviceWorkerSpike/offline.css',
-  'https://jagatjeevan.github.io/serviceWorkerSpike/offline.js',
-  'https://jagatjeevan.github.io/serviceWorkerSpike/style.css',
+  'https://progressive-web-app-components.github.io/serviceWorker/offline.html',
+  'https://progressive-web-app-components.github.io/serviceWorker/offline.css',
+  'https://progressive-web-app-components.github.io/serviceWorker/offline.js',
+  'https://progressive-web-app-components.github.io/serviceWorker/style.css',
 ];
-var offlineHtml = 'https://jagatjeevan.github.io/serviceWorkerSpike/offline.html';
+var offlineHtml = 'https://progressive-web-app-components.github.io/serviceWorker/offline.html';
 
 // // for local
 // var CacheArray = [
